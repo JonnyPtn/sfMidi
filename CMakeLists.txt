@@ -17,7 +17,7 @@ set(CMAKE_DEBUG_POSTFIX "_d")
 
 set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 
-add_library(sfMidi STATIC
+add_library(sfMidi
               ${INCSFMIDI}/Midi.h
               ${INCSFMIDI}/Loader.h
               ${INCSFMIDI}/Music.h
@@ -28,7 +28,7 @@ add_library(sfMidi STATIC
             )
 
 target_include_directories(sfMidi PUBLIC ${FLUIDSYNTH_INCLUDE_DIR})
-target_link_libraries(sfMidi ${FLUIDSYNTH_LIBRARIES})
+target_link_libraries(sfMidi ${FLUIDSYNTH_LIBRARIES} sfml-audio)
             
 add_definitions(-D_CRT_SECURE_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE)
 
