@@ -16,3 +16,5 @@ mkdir build && cd build
 cmake ..
 cmake --build .
 ```
+
+The test program will be built automatically
