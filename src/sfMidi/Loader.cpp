@@ -104,7 +104,7 @@ bool sfmidi::Loader::loadSoundFontFromFile(const std::string& filename)
     for (int i = fluid_synth_sfcount(synth_); i > 1; --i) {
       fluid_sfont_t* sfont = fluid_synth_get_sfont(synth_, 1);
       if (sfont != NULL)
-        fluid_synth_sfunload(synth_, sfont->id, 1);
+        fluid_synth_sfunload(synth_, fluid_sfont_get_id(sfont), 1);
     }
 
     return true;
